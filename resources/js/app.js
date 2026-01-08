@@ -18,6 +18,9 @@ createInertiaApp({
             .mount(el);
     },
     progress: {
-        color: '#4B5563',
+       
+        color: '#4f46e5', // Warna Indigo (Sesuai Brand)
+        showSpinner: true, // Munculin puteran loading di pojok kanan atas
+        includeCSS: true, // Pake CSS bawaan nprogress
     },
 });

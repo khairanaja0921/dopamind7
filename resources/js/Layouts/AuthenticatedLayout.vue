@@ -12,7 +12,7 @@ const showingNavigationDropdown = ref(false); // Mobile toggle
         <aside class="w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 hidden md:flex flex-col z-20 shadow-sm flex-shrink-0">
             <div class="h-20 flex items-center px-8 border-b border-gray-100 dark:border-gray-700">
                 <Link :href="route('dashboard')" class="text-2xl font-black text-brand-600 tracking-tighter hover:opacity-80">
-                    DopMyMind.
+                    DopaMind.
                 </Link>
             </div>
 
@@ -43,16 +43,16 @@ const showingNavigationDropdown = ref(false); // Mobile toggle
 
         <main class="flex-1 overflow-y-auto relative w-full">
             <div class="md:hidden bg-white h-16 flex items-center justify-between px-4 border-b sticky top-0 z-30 shadow-sm">
-                <span class="font-bold text-brand-600 text-lg">DopMyMind</span>
+                <span class="font-bold text-brand-600 text-lg">DopaMind</span>
                 <button @click="showingNavigationDropdown = !showingNavigationDropdown" class="text-gray-500">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
                 </button>
             </div>
 
             <div v-show="showingNavigationDropdown" class="md:hidden bg-white border-b p-4 space-y-2 shadow-lg">
-                <Link :href="route('dashboard')" class="block py-2 font-bold text-brand-600">Dashboard</Link>
-                <Link :href="route('habits.index')" class="block py-2 text-gray-600">Habit Tracker</Link>
-                <Link :href="route('logout')" method="post" as="button" class="block py-2 text-red-500 w-full text-left">Log Out</Link>
+                <Link :href="route('dashboard')" class="block py-2 font-bold text-brand-600" prefetch>Dashboard</Link>
+                <Link :href="route('habits.index')" class="block py-2 text-gray-600" prefetch>Habit Tracker</Link>
+                <Link :href="route('logout')" method="post" as="button" class="block py-2 text-red-500 w-full text-left" prefetch>Log Out</Link>
             </div>
 
             <div class="p-6 md:p-10 max-w-7xl mx-auto">

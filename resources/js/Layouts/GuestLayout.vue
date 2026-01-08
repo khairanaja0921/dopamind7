@@ -12,7 +12,7 @@ const user = usePage().props.auth.user;
         <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all">
             <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
                 <Link :href="route('home')" class="text-2xl font-black text-brand-600 tracking-tighter flex items-center gap-2 hover:opacity-80 transition">
-                    <span class="text-3xl">✦</span> DopMyMind.
+                    <span class="text-3xl">✦</span> DopaMind.
                 </Link>
 
                 <div class="hidden md:flex items-center gap-8 font-medium text-gray-500 text-sm">
@@ -37,15 +37,15 @@ const user = usePage().props.auth.user;
 
             <div v-show="mobileMenuOpen" class="md:hidden bg-white border-b border-gray-100 p-4 shadow-xl animate-fade-in-down">
                 <div class="flex flex-col gap-4 text-center">
-                    <Link :href="route('home')" class="py-2" :class="route().current('home') ? 'text-brand-600 font-bold' : 'text-gray-600'">Home</Link>
-                    <Link :href="route('about')" class="py-2" :class="route().current('about') ? 'text-brand-600 font-bold' : 'text-gray-600'">Tentang Kami</Link>
+                    <Link :href="route('home')" class="py-2" :class="route().current('home') ? 'text-brand-600 font-bold' : 'text-gray-600'"prefetch>Home</Link>
+                    <Link :href="route('about')" class="py-2" :class="route().current('about') ? 'text-brand-600 font-bold' : 'text-gray-600'"prefetch>Tentang Kami</Link>
                     <hr class="border-gray-100">
                     <div v-if="user">
-                        <Link :href="route('dashboard')" class="block w-full bg-brand-50 text-brand-600 font-bold py-3 rounded-xl">Dashboard</Link>
+                        <Link :href="route('dashboard')" class="block w-full bg-brand-50 text-brand-600 font-bold py-3 rounded-xl"prefetch>Dashboard</Link>
                     </div>
                     <div v-else class="flex flex-col gap-3">
-                        <Link :href="route('login')" class="block w-full text-gray-600 font-bold py-2">Log in</Link>
-                        <Link :href="route('register')" class="block w-full bg-brand-600 text-white font-bold py-3 rounded-xl">Mulai Gratis</Link>
+                        <Link :href="route('login')" class="block w-full text-gray-600 font-bold py-2" prefetch>Log in</Link>
+                        <Link :href="route('register')" class="block w-full bg-brand-600 text-white font-bold py-3 rounded-xl"prefetch>Mulai Gratis</Link>
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@ const user = usePage().props.auth.user;
 
         <footer class="bg-white border-t border-gray-100 py-10 mt-auto">
             <div class="max-w-7xl mx-auto px-6 text-center text-gray-400 text-sm">
-                <p>&copy; 2026 DopMyMind. One Month, One System.</p>
+                <p>&copy; 2026 DopaMind. One Month, One System.</p>
             </div>
         </footer>
     </div>

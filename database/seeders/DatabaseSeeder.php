@@ -17,11 +17,11 @@ class DatabaseSeeder extends Seeder
         // 1. Bikin User Test
         $user = User::create([
             'name' => 'Test User',
-            'email' => 'admin@dopmymind.com',
+            'email' => 'admin@DopaMind.com',
             'password' => Hash::make('password'), // Password gampang
         ]);
 
-        echo "✅ User dibuat: admin@dopmymind.com\n";
+        echo "✅ User dibuat: admin@DopaMind.com\n";
 
         // 2. Bikin Periode (Januari 2026)
         $period = Period::create([

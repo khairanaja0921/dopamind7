@@ -24,9 +24,9 @@ const toggleFaq = (index) => {
                     ✨ v1.0: The Anti-Burnout System
                 </div>
                 
-                <h1 class="text-6xl md:text-8xl font-black mb-8 leading-[1.05] tracking-tight text-gray-900">
+                <h1 class="text-6xl md:text-8xl font-black mb-8 leading-[1.05] tracking-tight text-gray-900 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100 fill-mode-both" >
                     Atur Hidup.<br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100 fill-mode-both">
                         Reset Tiap Bulan.
                     </span>
                 </h1>
@@ -44,26 +44,87 @@ const toggleFaq = (index) => {
                         Pelajari Filosofinya
                     </Link>
                 </div>
-                <div v-else>
-                    <Link :href="route('dashboard')" class="inline-block bg-indigo-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-xl transition">
-                        Buka Dashboard Saya
-                    </Link>
-                </div>
-
-                <div class="mt-20 relative mx-auto max-w-5xl">
-                    <div class="bg-gray-900 rounded-t-[2rem] p-4 pb-0 shadow-2xl border border-gray-800">
-                        <div class="bg-gray-800 rounded-t-xl p-6 h-48 md:h-80 flex items-end justify-center overflow-hidden relative">
-                             <div class="absolute top-10 left-10 right-10 flex gap-4">
-                                <div class="w-1/4 h-32 bg-gray-700/50 rounded-xl animate-pulse"></div>
-                                <div class="w-1/4 h-32 bg-gray-700/50 rounded-xl animate-pulse delay-75"></div>
-                                <div class="w-2/4 h-32 bg-gray-700/50 rounded-xl animate-pulse delay-150"></div>
-                             </div>
-                             <div class="text-gray-600 font-mono text-sm">Dashboard Preview</div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </header>
+
+<section class="py-24 bg-gray-50 border-y border-gray-200">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-indigo-600 font-bold tracking-widest uppercase mb-4 text-sm">The Ecosystem</h2>
+                    <h3 class="text-4xl md:text-5xl font-black text-gray-900 mb-6">Apa Aja Isinya?</h3>
+                    <p class="text-xl text-gray-500">
+                        Gak cuma Habit. Ini adalah toolkit lengkap buat ngatur seluruh aspek hidup lo dalam satu dashboard.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <div class="col-span-1 sm:col-span-2 bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-green-50 rounded-full blur-2xl -mr-8 -mt-8 group-hover:bg-green-100 transition"></div>
+                        <div class="relative z-10">
+                            <div class="w-14 h-14 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-3xl mb-6">🌱</div>
+                            <h4 class="text-xl font-bold mb-2 text-gray-900">Habit Tracker</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed">
+                                Fitur inti. Bangun kebiasaan baru dengan sistem checklist harian. Visualisasikan streak lo biar makin semangat.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 group">
+                        <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-6">💸</div>
+                        <h4 class="text-xl font-bold mb-2 text-gray-900">Finance Flow</h4>
+                        <p class="text-gray-500 text-sm">
+                            Catat pemasukan & pengeluaran simpel. Stop bocor halus.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 group">
+                        <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-3xl mb-6">📝</div>
+                        <h4 class="text-xl font-bold mb-2 text-gray-900">Daily Plan</h4>
+                        <p class="text-gray-500 text-sm">
+                            To-Do List hari ini aja. Fokus ke apa yang harus selesai sekarang.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 group">
+                        <div class="w-14 h-14 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center text-3xl mb-6">🎯</div>
+                        <h4 class="text-xl font-bold mb-2 text-gray-900">Goal Tracker</h4>
+                        <p class="text-gray-500 text-sm">
+                            Pecah mimpi besar tahunan jadi target bulanan yang masuk akal.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 group">
+                        <div class="w-14 h-14 bg-yellow-100 text-yellow-600 rounded-2xl flex items-center justify-center text-3xl mb-6">📔</div>
+                        <h4 class="text-xl font-bold mb-2 text-gray-900">Journal</h4>
+                        <p class="text-gray-500 text-sm">
+                            Tumpahkan isi kepala lo. Refleksi harian biar mental tetap waras.
+                        </p>
+                    </div>
+
+                    <div class="col-span-1 sm:col-span-2 bg-gray-900 text-white p-8 rounded-[2rem] shadow-xl hover:shadow-2xl hover:-translate-y-1 transition duration-300 relative overflow-hidden">
+                        <div class="absolute bottom-0 right-0 w-64 h-64 bg-indigo-600 rounded-full blur-[80px] opacity-40"></div>
+                        
+                        <div class="relative z-10 flex flex-col md:flex-row gap-8 items-start md:items-center">
+                            <div class="flex-1">
+                                <div class="flex gap-4 mb-4">
+                                    <span class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center text-2xl">💼</span>
+                                    <span class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center text-2xl">🎨</span>
+                                </div>
+                                <h4 class="text-xl font-bold mb-2">Job & Content Planner</h4>
+                                <p class="text-gray-400 text-sm">
+                                    Lacak lamaran kerja lo (Sent, Interview, Offer) atau atur jadwal posting konten sosmed lo. Produktivitas karir dalam satu tempat.
+                                </p>
+                            </div>
+                            <div class="bg-gray-800 px-4 py-2 rounded-lg text-xs font-bold text-gray-400 border border-gray-700">
+                                COMING SOON
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
         <section class="py-24 bg-white">
             <div class="max-w-6xl mx-auto px-6 space-y-32">
@@ -125,7 +186,7 @@ const toggleFaq = (index) => {
                             Habit di HP, Keuangan di Laptop, Jurnal di Buku. Energi lo habis cuma buat inget harus buka aplikasi yang mana.
                         </p>
                         <p class="text-indigo-600 font-bold text-lg">
-                            DopMyMind menggabungkan Habit & Keuangan dalam satu Dashboard simpel.
+                            DopaMind menggabungkan Habit & Keuangan dalam satu Dashboard simpel.
                         </p>
                     </div>
                 </div>
