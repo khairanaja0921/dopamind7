@@ -7,6 +7,16 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\SocialController;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Session;
+
+
+
+Route::get('/lang/{locale}', function ($locale) {
+    if (in_array($locale, ['id', 'en'])) {
+        Session::put('locale', $locale);
+    }
+    return back(); // Kembali ke halaman sebelumnya
+})->name('lang.switch');
 
 // --- GROUP 1: PUBLIC PAGES (GuestLayout) ---
 Route::get('/', function () {
@@ -29,8 +39,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    // Habits
+    // Habits (INI YANG BARU)
     Route::get('/habits', [HabitController::class, 'index'])->name('habits.index');
+    Route::post('/habits', [HabitController::class, 'store'])->name('habits.store'); // <-- BARU: Simpan
+    Route::delete('/habits/{habit}', [HabitController::class, 'destroy'])->name('habits.destroy'); // <-- BARU: Hapus
+    Route::post('/habits/{habit}/log', [HabitController::class, 'storeLog'])->name('habits.log');
 
     // Profile (System)
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

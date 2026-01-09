@@ -31,9 +31,9 @@ const submit = () => {
                     🔐
                 </div>
 
-                <h2 class="text-2xl font-black text-gray-900 mb-2">Lupa Password?</h2>
+                <h2 class="text-2xl font-black text-indigo-950 mb-2">{{ $t('auth_reset_title') }}</h2>
                 <p class="text-gray-500 text-sm mb-8 leading-relaxed">
-                    Santai, jangan panik. Masukin email lo di bawah, kita kirimin link buat reset passwordnya.
+                   {{ $t('auth_reset_desc') }}
                 </p>
 
                 <div v-if="status" class="mb-6 font-medium text-sm text-green-700 bg-green-50 p-4 rounded-xl border border-green-100">
@@ -42,18 +42,18 @@ const submit = () => {
 
                 <form @submit.prevent="submit" class="text-left space-y-5">
                     <div>
-                        <InputLabel for="email" value="Email" class="font-bold text-gray-700 ml-1 mb-1" />
-                        <TextInput id="email" type="email" class="mt-1 block w-full rounded-xl bg-gray-50 border-gray-200 focus:border-indigo-500 py-3" v-model="form.email" required autofocus placeholder="nama@email.com" />
+                        <InputLabel for="email" :value="$t('auth_label_email')" class="font-bold text-gray-700 ml-1 mb-1" />
+                        <TextInput id="email" type="email" class="mt-1 block w-full rounded-xl bg-gray-50 border-gray-200 focus:border-indigo-500 py-3" v-model="form.email" required autofocus :placeholder="$t('auth_placeholder_email')" />
                         <InputError class="mt-2" :message="form.errors.email" />
                     </div>
 
                     <button class="w-full bg-indigo-600 text-white font-bold py-3.5 rounded-xl shadow-lg hover:bg-indigo-700 transition transform hover:-translate-y-0.5 disabled:opacity-75" :disabled="form.processing">
-                        Kirim Link Reset
+                        {{ $t('auth_btn_reset') }}
                     </button>
                     
                     <div class="text-center mt-6">
                         <Link :href="route('login')" class="text-sm text-gray-500 font-bold hover:text-gray-900">
-                            ← Kembali ke Login
+                           {{ $t('auth_back_login') }}
                         </Link>
                     </div>
                 </form>

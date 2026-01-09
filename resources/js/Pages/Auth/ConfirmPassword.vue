@@ -29,14 +29,14 @@ const submit = () => {
                     🔒
                 </div>
 
-                <h2 class="text-2xl font-black text-gray-900 mb-2">Security Check.</h2>
+                <h2 class="text-2xl font-black text-indigo-950 mb-2">{{ $t('auth_confirm_title') }}</h2>
                 <p class="text-gray-500 text-sm leading-relaxed mb-8">
-                    Ini area sensitif, Bro. Tolong konfirmasi password lo dulu sebelum lanjut biar aman.
+                    {{ $t('auth_confirm_desc') }}
                 </p>
 
                 <form @submit.prevent="submit" class="text-left space-y-5">
                     <div>
-                        <InputLabel for="password" value="Password" class="font-bold text-gray-700 ml-1 mb-1" />
+                        <InputLabel for="password" :value="$t('auth_label_password')" class="font-bold text-gray-700 ml-1 mb-1" />
                         <TextInput
                             id="password"
                             type="password"
@@ -45,15 +45,15 @@ const submit = () => {
                             required
                             autocomplete="current-password"
                             autofocus
-                            placeholder="Masukkan password lo"
+                            :placeholder="$t('auth_placeholder_pass')"
                         />
                         <InputError class="mt-2" :message="form.errors.password" />
                     </div>
 
                     <button 
-                        class="w-full bg-gray-900 text-white font-bold py-3.5 rounded-xl shadow-lg hover:bg-black transition transform hover:-translate-y-0.5 disabled:opacity-75" 
+                        class="w-full bg-indigo-950 text-white font-bold py-3.5 rounded-xl shadow-lg hover:bg-indigo-900 transition transform hover:-translate-y-0.5 disabled:opacity-75" 
                         :disabled="form.processing">
-                        Konfirmasi Password
+                        {{ $t('auth_btn_confirm') }}
                     </button>
                 </form>
 

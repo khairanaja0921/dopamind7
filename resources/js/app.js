@@ -6,7 +6,10 @@ import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+// 1. IMPORT LIBRARY i18n
+import { i18nVue } from 'laravel-vue-i18n';
+
+const appName = import.meta.env.VITE_APP_NAME || 'DopaMind';
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
@@ -15,12 +18,18 @@ createInertiaApp({
         return createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
+            // 2. AKTIFKAN LIBRARY DISINI
+            .use(i18nVue, {
+                resolve: async lang => {
+                    const langs = import.meta.glob('../../lang/*.json');
+                    return await langs[`../../lang/${lang}.json`]();
+                }
+            })
             .mount(el);
     },
     progress: {
-       
-        color: '#4f46e5', // Warna Indigo (Sesuai Brand)
-        showSpinner: true, // Munculin puteran loading di pojok kanan atas
-        includeCSS: true, // Pake CSS bawaan nprogress
+        color: '#4f46e5',
+        showSpinner: true,
+        includeCSS: true,
     },
 });
