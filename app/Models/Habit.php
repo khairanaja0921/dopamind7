@@ -22,7 +22,7 @@ class Habit extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'period', 'name', 'icon', 'color', 'monthly_target', 'is_archived',
+        'user_id', 'period', 'name', 'icon', 'color', 'monthly_target', 'status', 'is_archived',
     ];
 
     // 🔥 3. Tambahkan ': HasMany' (Ini Kuncinya!)
