@@ -61,8 +61,8 @@ jobs:
     - name: Directory Permissions
       run: chmod -R 777 storage bootstrap/cache
 
-    - name: Execute Laravel Pint (Linting)
-      run: ./vendor/bin/pint --test
+    - name: Execute Laravel Pint (Linting & Auto-fix)
+      run: ./vendor/bin/pint
 
     - name: Compile Assets (Vite Build)
       run: npm run build

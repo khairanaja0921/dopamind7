@@ -8,16 +8,19 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            // Kita kasih nullable() biar user lama yang nggak punya foto nggak error
-            $table->string('avatar_path')->after('email')->nullable();
-        });
+        if (! Schema::hasColumn('users', 'avatar_path')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->string('avatar_path')->after('email')->nullable();
+            });
+        }
     }
 
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('avatar_path');
-        });
+        if (Schema::hasColumn('users', 'avatar_path')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->dropColumn('avatar_path');
+            });
+        }
     }
 };
